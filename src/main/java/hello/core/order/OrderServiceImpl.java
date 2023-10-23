@@ -10,6 +10,10 @@ public class OrderServiceImpl implements OrderService{
     // 1. 회원 저장소에서 회원찾기
     private final MemberRepository memberRepository;
 
+    public MemberRepository getMemberRepository() {
+        return memberRepository;
+    }
+
     // 2. 할인정책 찾기
     // 기존 fixDiscountPolicy -> rate로 변경 -> DiscountPolicy만 의존하도록 설정
     private final DiscountPolicy discountPolicy;
@@ -20,6 +24,7 @@ public class OrderServiceImpl implements OrderService{
         this.discountPolicy = discountPolicy;
     }
 
+
     @Override
     public Order createOrder(Long memberId, String itemName, int itemPrice) {
         // 1. 회원 정보 조회
@@ -29,5 +34,10 @@ public class OrderServiceImpl implements OrderService{
 
         return new Order(memberId, itemName, itemPrice, discountPrice);
 
+
+
     }
+
+
+
 }
