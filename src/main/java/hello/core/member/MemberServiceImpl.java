@@ -2,13 +2,18 @@ package hello.core.member;
 
 public class MemberServiceImpl implements MemberService {
 
-    // 회원서비스 구현체 설정(널포인트 이슈가 생길 수 있기 때문)
-    private final MemberRepository memberRepository = new MemoryMemberRepository();
+    // 회원서비스 구현체 설정
+    // 1. appconfig에 따로 설정해둠 (new 지움)
+    private final MemberRepository memberRepository;
+
+    // 2. 이후 생성자 생성 (생성자를 통해 memberRepository에 들어갈 값을 설정)
+    public MemberServiceImpl(MemberRepository memberRepository) {
+        this.memberRepository = memberRepository;
+    }
 
 
     @Override
     public void join(Member member) {
-
         memberRepository.save(member);
     }
 

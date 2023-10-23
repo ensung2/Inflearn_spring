@@ -11,7 +11,7 @@ public class MemberApp {
     // Junit을 사용하여 테스트 하는것 = 좋은 방법!!
 
     public static void main(String[] args) {
-        MemberService memberSerivice = new MemberServiceImpl();
+        MemberService memberSerivice = new MemberServiceImpl(memberRepository);
         Member member = new Member(1L,"memberA", Grade.VIP);
         memberSerivice.join(member);
 
