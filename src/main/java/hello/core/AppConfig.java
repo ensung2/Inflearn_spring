@@ -17,6 +17,7 @@ import org.springframework.context.annotation.Configuration;
 
 // spring으로 변경 => @Configuration과 @Bean 붙여주기
 
+
 @Configuration // 생략할 수 있으나 싱글톤 컨테이너를 보장해주지 못함. (사용자 직접 호출이 됨으로
                 // 스프링 컨테이너의 관리외가 됨)
 public class AppConfig {

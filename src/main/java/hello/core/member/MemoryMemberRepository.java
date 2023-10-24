@@ -1,8 +1,11 @@
 package hello.core.member;
 
+import org.springframework.stereotype.Component;
+
 import java.util.HashMap;
 import java.util.Map;
 
+@Component
 // 구현체 생성 (alt + enter 눌러서 구현체 데려오기)
 public class MemoryMemberRepository implements MemberRepository{
 
