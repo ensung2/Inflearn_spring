@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<!-- 타임리프 선언 -->
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--ModelAndView mav = new ModelAndView("response/hello").addObject("data", "hello!");-->
+<!--data의 값을 hello!로 바꿔준다-->
+<p th:text="${data}">empty</p>
+</body>
+</html>
