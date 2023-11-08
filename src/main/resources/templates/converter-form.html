@@ -1,0 +1,18 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>폼에 컨버터 적용하기</title>
+</head>
+<body>
+<form th:object="${form}" th:method="post">
+                                <!--th:field는 컨버전 서비스도 자동으로 해준다!-->
+    th:field <input type="text" th:field="*{ipPort}"></br>
+    th:value <input type="text" th:value="*{ipPort}">(보여주기 용도)</br>
+    <input type="submit">
+</form>
+</body>
+</html>

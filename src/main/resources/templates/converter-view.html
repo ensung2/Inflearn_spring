@@ -1,0 +1,16 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>뷰 템플릿에 컨버터 적용하기</title>
+</head>
+<body>
+    <li>${number} : <span th:text="${number}"></span></li>  <!-- 괄호 1개 : 컨버터 미적용 (변수 표현식)-->
+    <li>${{number}} : <span th:text="${{number}}"></span></li> <!-- 괄호 2개 : 컨버터 적용 (컨버전 서비스 적용)-->
+    <li>${ipPort} : <span th:text="${ipPort}"></span></li>  <!--미적용(String) hello.typeconverter.type.IpPort@59cb0946-->
+    <li>${{ipPort}} : <span th:text="${{ipPort}}"></span></li>  <!--적용(converter) 127.0.0.1:8080-->
+</body>
+</html>
